@@ -6,13 +6,25 @@ const inputs = document.querySelectorAll('.controls input');
 
 // Log input value
 function handleUpdate() {
-    console.log(this.value);
-    /*  
-        this.dataset is an object that will contain all of the  data attributes from a specific element
+
+    /*  *** this.dataset ***
+        An object that contains all "data-" attributes of a HTML element
         Returns an empty object when there is no data attribute found
     */
+
+    // Object containing all "data-" attribute in HTML element
+    const obj = this.dataset;
+
+    // Get sizing unit from HTML element
+    const unit = obj.sizing || '';
+
+    // Set property and value using element's name and value respectively
+    // Append unit to element's value
+    // Set/Update root variables
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + unit);
+
 }
 
-// Add event listener to all inputs whenever range changes and mouse moves
+// Add event listener to input whenever range changes and mouse moves
 inputs.forEach(input => input.addEventListener('change', handleUpdate));
 inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));

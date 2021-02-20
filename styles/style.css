@@ -1,4 +1,4 @@
-/* CSS Variables declared on the highest element, ROOT */
+/* CSS Variables declared on the highest element, <html>*/
 :root {
     --spacing: 10px;
     --blur: 10px;
