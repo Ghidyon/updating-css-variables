@@ -1,10 +1,8 @@
 // Gets all inputs on the html
 const inputs = document.querySelectorAll('.controls input');
-
 // Returns a NODELIST which is similar to an ARRAY but different
 // A NODELIST does not have all the methods an ARRAY has
 
-// Log input value
 function handleUpdate() {
 
     /*  *** this.dataset ***
@@ -20,8 +18,8 @@ function handleUpdate() {
 
     // Set property and value using element's name and value respectively
     // Append unit to element's value
-    // Set/Update root variables
-    document.documentElement.style.setProperty(`--${this.name}`, this.value + unit);
+    // Set/Update HTML root document variables
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + unit); //setProperty(property_name, property_value)
 
 }
 
